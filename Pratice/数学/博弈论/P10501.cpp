@@ -1,7 +1,9 @@
+
+
 /**
  * @title: ..
  * @desc: ..
- * @tag: IO
+ * @tag: SG定理
  * @url: 
  */
 
@@ -126,20 +128,34 @@ void write(int);
 const int N = 5e5 + 5;
 const int MOD = 1e9 + 7;
 
+int mex(auto S) 
+{
+    for (int i = 0;; ++i)
+        if (S.find(i) == S.end())
+            return i;
+}
+
 void solve()
 {
-    int n=read();
-    double x=0,y=0;
-    double ans=0;
-    rep(i,0,n){
-        double a=read(),b=read();
-        ans+=sqrt((x-a)*(x-a)+(y-b)*(y-b));
-        x=a;
-        y=b;
+    /*
+        要注意当sg的w或者h为1的时候不适用SG定理
+        因为一个为1的所有都是成功态，子节点也不是失败态，不符合公平组合的定义
+        所以规定从2开始计算
+    */
+    int h,w;
+    while(cin>>w>>h){
+        vector<vector<int>> sg(w+1,vector<int>(h+1));
+        rep(i,2,w+1)
+            rep(j,2,h+1){
+                unordered_set<int> s;
+                if(i<=3&&j<=3)continue;
+                rep(p,2,i-1)s.insert(sg[p][j]^sg[i-p][j]);
+                rep(p,2,j-1)s.insert(sg[i][p]^sg[i][j-p]);
+                sg[i][j]=mex(s);
+            }
+        print(sg[w][h]?"WIN":"LOSE");
     }
-    ans+=sqrt(x*x+y*y);
-    printf("%.8f",ans);
-}   
+}
 
 signed main()
 {
