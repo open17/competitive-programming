@@ -1,39 +1,27 @@
-// @prefix IO
-// @description ACM IO
-
+// #define REAP_READ
+// #define USE_LL
+// #define USE_IOS
+// #define IN_FILE "data.in"
+// #define OUT_FILE "solve.out"
+#define USE_STD
+#include <bits/stdc++.h>
 #include "template.h"
+// #include <atcoder/all>
+// using namespace atcoder;
 
-// SOLVE
+
+const int N = 5e5 + 5;
+const int MOD = 1e9 + 7;
+
+
 void solve()
 {
-    print(read());
+    int n=read();
+    print(n);
 }
 
 signed main()
 {
-    int T = 1;
-    debug("hello world");
-#ifdef IN_FILE
-    freopen(IN_FILE, "r", stdin);
-#endif
-
-#ifdef OUT_FILE
-    freopen(OUT_FILE, "w", stdout);
-#endif
-
-#ifdef REAP_READ
-    std::cin >> T;
-#endif
-
-#ifdef USE_IOS
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(0);
-    std::cout.tie(0);
-#endif
-
-    while (T--)
-    {
-        solve();
-    }
+    IO(solve);
     return 0;
 }

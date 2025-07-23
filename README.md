@@ -27,7 +27,7 @@ python clear.py
 
 对拍
 ```sh
-python Tools/VBC.py
+python vbc.py
 ```
 
 合并代码
