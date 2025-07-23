@@ -33,4 +33,5 @@ python vbc.py
 合并代码
 ```sh
 python exp.py xxx.cpp
+python exp.py Tem.cpp
 ```

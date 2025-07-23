@@ -85,9 +85,9 @@ T gcd(T a, T b)
 }
 
 // 快读快写实现
-inline int read()
+inline i64 read()
 {
-    int x = 0, f = 1;
+    i64 x = 0, f = 1;
     char ch = getchar();
     while (ch < '0' || ch > '9')
     {
@@ -97,7 +97,7 @@ inline int read()
     }
     while (ch >= '0' && ch <= '9')
     {
-        x = x * 10 + ch - '0';
+        x = x * (i64)10 + (i64)(ch - '0');
         ch = getchar();
     }
     return x * f;

@@ -75,7 +75,8 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "fenwicktree": "cpp"
+        "fenwicktree": "cpp",
+        "segtree": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
