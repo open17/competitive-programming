@@ -29,3 +29,8 @@ python clear.py
 ```sh
 python Tools/VBC.py
 ```
+
+合并代码
+```sh
+python exp.py xxx.cpp
+```
